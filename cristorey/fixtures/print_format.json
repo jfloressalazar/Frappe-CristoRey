@@ -1,0 +1,33 @@
+[
+ {
+  "absolute_value": 0,
+  "align_labels_right": 0,
+  "css": ".text-14 {\n  font-size: 14px;\n}\n",
+  "custom_format": 1,
+  "default_print_language": "es-GT",
+  "disabled": 0,
+  "doc_type": "PCR-ACT-MAESTROACTAS",
+  "docstatus": 0,
+  "doctype": "Print Format",
+  "font": null,
+  "font_size": 14,
+  "format_data": null,
+  "html": "<html>\n<head>\n    <meta charset=\"UTF-8\">\n</head>\n<body>\n    {% set parroquia = frappe.get_doc('PCR-CONF-DATOSPARROQUIA', 'DATO-PARROQUIA-0001')%}\n    <div class=\"print-heading text-center\">\n        <img src='/files/logo_parroquia.jpeg' width='100px' /><br>\n        <h5 style=\"margin: 5px 0;\"><strong class=\"sub-heading\">{{parroquia.nombreparroquia}}</strong></h5>\n        <h6 style=\"margin: 0;\">{{parroquia.diosesis}}</h6>\n    </div>\n    <section>\n      <h4 class=\"text-center\">FE DE BAUTISMO</h4>\n      <p class=\"text-justify text-14\">El Infrascrito Párroco de la Parroquia \"Cristo Rey\" El Paraíso de la Diósesis de Chalatenango,\n      <strong>CERTIFICA</strong> que en:</p>\n      <h4 class=\"text-center m-0 text-14\">LIBRO: {{doc.libroacta}}</h4>\n      <h4 class=\"text-center m-0 text-14\">FOLIO: {{doc.nfolio}}</h4>\n      <h4 class=\"text-center m-0 text-14\">ASIENTO: {{doc.nasiento}}</h4>\n      <h4 class=\"text-center m-0 text-14\">Al margen se lee: {{doc.nombretitular}}</h4>\n      <p class=\"text-justify text-14 mt-2\">Y literalmente dice:</p>\n      <p class=\"text-justify text-14 mt-2\">En El Paraíso, a los {{ frappe.call(\"cristorey.cristoreyapp.doctype.pcr_act_maestroactas.pcr_act_maestroactas.fecha_en_formato_legal\", fecha=doc.fechabautizo) }}, el Párroco {{doc.nombresacerdotebautizo | title }},\n      bautizó solemnemente a:</p>\n      <h4 class=\"text-center m-0 text-14\">{{doc.nombrebautizado | title }}</h4>\n      <p class=\"text-justify text-14 mt-2\">Que nació a los {{ frappe.call(\"cristorey.cristoreyapp.doctype.pcr_act_maestroactas.pcr_act_maestroactas.fecha_en_formato_legal\", fecha=doc.fechanacimiento) }}. Hijo legítimo de {{doc.nombrepadre | title }} y {{doc.nombremadre | title }}.</p>\n      <p class=\"text-justify text-14 mt-2\">Padrino: {{doc.nombrepadrino | title }}</p>\n      <p class=\"text-justify text-14 mt-2\">Madrina: {{doc.nombremadrina | title }}</p>\n      </br>\n      <p class=\"text-justify text-14 mt-2\">Y para la realización del <strong>SACRAMENTO DE LA CONFIRMACIÓN</strong>,\n      se extiende la presente en esta oficina parroquial a los {{ frappe.call(\"cristorey.cristoreyapp.doctype.pcr_act_maestroactas.pcr_act_maestroactas.formato_legal_actual\") }}\n.</p>\n      </br>\n    </section>\n    <section class=\"text-center\">\n        {%set parroco = frappe.get_all('PCR-CONF-PARROCO', filters={\"activo\": 1},fields=[\"nombrecompletoparroco\"]) %}\n        <div class=\"flex justify-center items-center p-6\">\n            <div class=\"bg-white p-6 rounded-lg shadow-md w-full max-w-md\">\n                <div class=\"flex flex-col items-center mt-6\">\n                    <p class=\"w-full text-center pt-2\">________________________________________</p>\n                </div>\n                <div class=\"flex flex-col items-center mb-4\"> \n                    <p class=\"font-semibold\">{{parroco[0].nombrecompletoparroco | default(\"sin parroco activo\")}}</p>\n                    <p class=\"text-sm text-gray-600\">Párroco</p>\n                </div>\n            </div>\n        </div>\n    </section>\n    \n    <footer style=\"width: 100%;\">\n      <div style=\"float: right;\">\n        <!-- Teléfono -->\n        <p class=\"text-sm m-0 text-left\">\n          Telefono: {{parroquia.telefonoparroquia}}\n          </br>\n          Correo: {{parroquia.correoparroquia}}\n        </p>\n      </div>\n      <div style=\"float: left;\">\n        <!-- Dirección -->\n        <p class=\"text-sm m-0\">\n          Dirección:\n          </br>\n          {{parroquia.direccionparroquia}}\n        </p>\n      </div>\n    </footer>\n</body>\n</html>\n",
+  "line_breaks": 0,
+  "margin_bottom": 15.0,
+  "margin_left": 15.0,
+  "margin_right": 15.0,
+  "margin_top": 15.0,
+  "modified": "2025-01-21 22:43:59.056256",
+  "module": "CristoReyApp",
+  "name": "PCR-ACTA-FEBAUTISMO",
+  "page_number": "Hide",
+  "print_format_builder": 0,
+  "print_format_builder_beta": 0,
+  "print_format_type": "Jinja",
+  "raw_commands": null,
+  "raw_printing": 0,
+  "show_section_headings": 0,
+  "standard": "No"
+ }
+]
