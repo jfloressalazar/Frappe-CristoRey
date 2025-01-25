@@ -10,5 +10,8 @@ frappe.ui.form.on("PCR-ACT-MAESTROACTAS", {
         if (frm.doc.tipoacta=='CONSTANCIA DE PRIMERA COMUNIÓN') {
             frm.set_value('nombrebenificiadoprimcomu', frm.doc.nombretitular);
         } 
+        if (frm.doc.tipoacta=='CONFIRMACIÓN') {
+            frm.set_value('nombrecompletoconfirmado', frm.doc.nombretitular);
+        } 
     }
 });

@@ -40,7 +40,22 @@
   "column_break_kolc",
   "nombresacerdoteprimcomu",
   "datosconfirmacion_tab",
+  "fechaconfirmacion",
+  "nombrecompletoconfirmado",
+  "nombrecompletomadreconfirma",
+  "nombrecompletopadreconfirma",
+  "column_break_khur",
+  "nombresacerdoteconfirma",
+  "nombremadrinaconfirma",
+  "nombrepadrinoconfirma",
   "datosmatrimonio_tab",
+  "fechamatrimonio",
+  "nombrenovia",
+  "nombrenovio",
+  "column_break_aluq",
+  "nombresacerdotematrimonio",
+  "nombremadrinamatrimonio",
+  "nombrepadrinomatrimonio",
   "datossupletoriabautismo_tab",
   "datossupletoriaconfirmacion_tab"
  ],
@@ -94,11 +109,13 @@
    "label": "Datos de primera comuni\u00f3n"
   },
   {
+   "depends_on": "eval:doc.tipoacta=='CONFIRMACI\u00d3N'",
    "fieldname": "datosconfirmacion_tab",
    "fieldtype": "Tab Break",
    "label": "Datos de confirmaci\u00f3n"
   },
   {
+   "depends_on": "eval:doc.tipoacta=='MATRIMONIO RELIGIOSO'",
    "fieldname": "datosmatrimonio_tab",
    "fieldtype": "Tab Break",
    "label": "Datos de matrimonio"
@@ -219,6 +236,7 @@
    "options": "PCR-MH-DISTRITOS"
   },
   {
+   "depends_on": "eval:doc.tipoacta!='MATRIMONIO RELIGIOSO'",
    "fieldname": "nombretitular",
    "fieldtype": "Data",
    "in_filter": 1,
@@ -226,7 +244,7 @@
    "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Nombre del titular",
-   "reqd": 1
+   "mandatory_depends_on": "eval:doc.tipoacta!='MATRIMONIO RELIGIOSO'"
   },
   {
    "fetch_from": "tipoacta.nombrecorrelativoacta",
@@ -268,11 +286,92 @@
    "fieldtype": "Date",
    "label": "Fecha de primera comuni\u00f3n",
    "mandatory_depends_on": "eval:doc.tipoacta=='CONSTANCIA DE PRIMERA COMUNI\u00d3N'"
+  },
+  {
+   "fieldname": "nombrecompletoconfirmado",
+   "fieldtype": "Data",
+   "label": "Nombre completo del confirmado",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONFIRMACI\u00d3N'",
+   "read_only": 1
+  },
+  {
+   "fieldname": "fechaconfirmacion",
+   "fieldtype": "Date",
+   "label": "Fecha de confirmaci\u00f3n",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONFIRMACI\u00d3N'"
+  },
+  {
+   "fieldname": "nombrecompletomadreconfirma",
+   "fieldtype": "Data",
+   "label": "Nombre completo de la madre"
+  },
+  {
+   "fieldname": "nombrecompletopadreconfirma",
+   "fieldtype": "Data",
+   "label": "Nombre completo del padre"
+  },
+  {
+   "fieldname": "column_break_khur",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nombresacerdoteconfirma",
+   "fieldtype": "Data",
+   "label": "T\u00edtulo y nombre del sacerdote que realiz\u00f3 la confirma",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONFIRMACI\u00d3N'"
+  },
+  {
+   "fieldname": "nombremadrinaconfirma",
+   "fieldtype": "Data",
+   "label": "Nombre completo de la madrina"
+  },
+  {
+   "fieldname": "nombrepadrinoconfirma",
+   "fieldtype": "Data",
+   "label": "Nombre completo del padrino"
+  },
+  {
+   "fieldname": "column_break_aluq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "fechamatrimonio",
+   "fieldtype": "Date",
+   "label": "Fecha del matrimonio",
+   "mandatory_depends_on": "eval:doc.tipoacta=='MATRIMONIO RELIGIOSO'"
+  },
+  {
+   "fieldname": "nombrenovia",
+   "fieldtype": "Data",
+   "label": "Nombre completo de la novia",
+   "mandatory_depends_on": "eval:doc.tipoacta=='MATRIMONIO RELIGIOSO'"
+  },
+  {
+   "fieldname": "nombrenovio",
+   "fieldtype": "Data",
+   "label": "Nombre completo del novio",
+   "mandatory_depends_on": "eval:doc.tipoacta=='MATRIMONIO RELIGIOSO'"
+  },
+  {
+   "fieldname": "nombresacerdotematrimonio",
+   "fieldtype": "Data",
+   "label": "Nombre del sacerdote que presidi\u00f3",
+   "mandatory_depends_on": "eval:doc.tipoacta=='MATRIMONIO RELIGIOSO'"
+  },
+  {
+   "fieldname": "nombremadrinamatrimonio",
+   "fieldtype": "Data",
+   "label": "Nombre completo de la madrina"
+  },
+  {
+   "fieldname": "nombrepadrinomatrimonio",
+   "fieldtype": "Data",
+   "label": "Nombre completo del padrino"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-24 22:45:58.736359",
+ "modified": "2025-01-25 09:22:31.215634",
  "modified_by": "Administrator",
  "module": "CristoReyApp",
  "name": "PCR-ACT-MAESTROACTAS",
