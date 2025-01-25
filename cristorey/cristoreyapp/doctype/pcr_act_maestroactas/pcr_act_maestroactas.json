@@ -33,6 +33,12 @@
   "column_break_zrsv",
   "distrito",
   "datosprimeracomunion_tab",
+  "fechaprimecomu",
+  "nombrebenificiadoprimcomu",
+  "nombrecompletomadreprimcomu",
+  "nombrecompletopadreprimcomu",
+  "column_break_kolc",
+  "nombresacerdoteprimcomu",
   "datosconfirmacion_tab",
   "datosmatrimonio_tab",
   "datossupletoriabautismo_tab",
@@ -82,6 +88,7 @@
    "label": "Datos de bautismo"
   },
   {
+   "depends_on": "eval:doc.tipoacta=='CONSTANCIA DE PRIMERA COMUNI\u00d3N'",
    "fieldname": "datosprimeracomunion_tab",
    "fieldtype": "Tab Break",
    "label": "Datos de primera comuni\u00f3n"
@@ -227,11 +234,45 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "Nombre codigo tipo acta"
+  },
+  {
+   "default": "nombretitular",
+   "fieldname": "nombrebenificiadoprimcomu",
+   "fieldtype": "Data",
+   "label": "Nombre completo de beneficiado",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONSTANCIA DE PRIMERA COMUNI\u00d3N'",
+   "read_only": 1
+  },
+  {
+   "fieldname": "nombrecompletomadreprimcomu",
+   "fieldtype": "Data",
+   "label": "Nombre completo de la madre"
+  },
+  {
+   "fieldname": "nombrecompletopadreprimcomu",
+   "fieldtype": "Data",
+   "label": "Nombre completo del padre"
+  },
+  {
+   "fieldname": "column_break_kolc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nombresacerdoteprimcomu",
+   "fieldtype": "Data",
+   "label": "Nombre del sacerdote que presidi\u00f3",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONSTANCIA DE PRIMERA COMUNI\u00d3N'"
+  },
+  {
+   "fieldname": "fechaprimecomu",
+   "fieldtype": "Date",
+   "label": "Fecha de primera comuni\u00f3n",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONSTANCIA DE PRIMERA COMUNI\u00d3N'"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-21 22:15:23.088009",
+ "modified": "2025-01-24 22:45:58.736359",
  "modified_by": "Administrator",
  "module": "CristoReyApp",
  "name": "PCR-ACT-MAESTROACTAS",
