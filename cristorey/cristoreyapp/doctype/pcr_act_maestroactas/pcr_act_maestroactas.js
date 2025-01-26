@@ -13,5 +13,8 @@ frappe.ui.form.on("PCR-ACT-MAESTROACTAS", {
         if (frm.doc.tipoacta=='CONFIRMACIÓN') {
             frm.set_value('nombrecompletoconfirmado', frm.doc.nombretitular);
         } 
+        if (frm.doc.tipoacta=='SUPLETORIA DE BAUTISMO') {
+            frm.set_value('nombrebautizadosuple', frm.doc.nombretitular);
+        } 
     }
 });

@@ -33,6 +33,7 @@
   "column_break_zrsv",
   "distrito",
   "datosprimeracomunion_tab",
+  "datos_de_la_primera_comuni\u00f3n_section",
   "fechaprimecomu",
   "nombrebenificiadoprimcomu",
   "nombrecompletomadreprimcomu",
@@ -40,6 +41,7 @@
   "column_break_kolc",
   "nombresacerdoteprimcomu",
   "datosconfirmacion_tab",
+  "datos_de_la_confirmaci\u00f3n_section",
   "fechaconfirmacion",
   "nombrecompletoconfirmado",
   "nombrecompletomadreconfirma",
@@ -49,6 +51,7 @@
   "nombremadrinaconfirma",
   "nombrepadrinoconfirma",
   "datosmatrimonio_tab",
+  "datos_del_matrimonio_section",
   "fechamatrimonio",
   "nombrenovia",
   "nombrenovio",
@@ -57,6 +60,27 @@
   "nombremadrinamatrimonio",
   "nombrepadrinomatrimonio",
   "datossupletoriabautismo_tab",
+  "datos_de_supletoria_de_bautizo_section",
+  "fechabautizosuple",
+  "column_break_gjtx",
+  "nombresacerdotebautizosuple",
+  "personas_que_juran_y_dan_datos_section",
+  "table_personasjuran",
+  "datos_del_bautizado_y_padres_section",
+  "nombrebautizadosuple",
+  "nombremadrebautizosuple",
+  "nombrepadrebautizosuple",
+  "column_break_zucj",
+  "nombremadrinabautizosuple",
+  "nombrepadrinobautizosuple",
+  "datos_de_la_partida_de_nacimiento_section",
+  "fechanacimientobautizosuple",
+  "lugarnacimientobautizosuple",
+  "column_break_gdmh",
+  "distritopartidabautizosuple",
+  "nombredistritobautizosuple",
+  "municipiobautizosuple",
+  "departamentobautizosuple",
   "datossupletoriaconfirmacion_tab"
  ],
  "fields": [
@@ -121,6 +145,7 @@
    "label": "Datos de matrimonio"
   },
   {
+   "depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'",
    "fieldname": "datossupletoriabautismo_tab",
    "fieldtype": "Tab Break",
    "label": "Datos de supletoria de bautismo"
@@ -367,11 +392,141 @@
    "fieldname": "nombrepadrinomatrimonio",
    "fieldtype": "Data",
    "label": "Nombre completo del padrino"
+  },
+  {
+   "fieldname": "datos_de_la_primera_comuni\u00f3n_section",
+   "fieldtype": "Section Break",
+   "label": "Datos de la primera comuni\u00f3n"
+  },
+  {
+   "fieldname": "datos_de_la_confirmaci\u00f3n_section",
+   "fieldtype": "Section Break",
+   "label": "Datos de la confirmaci\u00f3n"
+  },
+  {
+   "fieldname": "datos_del_matrimonio_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del matrimonio"
+  },
+  {
+   "fieldname": "fechabautizosuple",
+   "fieldtype": "Date",
+   "label": "Fecha del bautizo",
+   "mandatory_depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'"
+  },
+  {
+   "fieldname": "datos_de_supletoria_de_bautizo_section",
+   "fieldtype": "Section Break",
+   "label": "Datos de supletoria de bautizo"
+  },
+  {
+   "fieldname": "column_break_gjtx",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "datos_del_bautizado_y_padres_section",
+   "fieldtype": "Section Break",
+   "label": "Datos del bautizado, padres y padrinos"
+  },
+  {
+   "fieldname": "nombresacerdotebautizosuple",
+   "fieldtype": "Data",
+   "label": "T\u00edtulo y nombre del sacerdote que bautiz\u00f3",
+   "mandatory_depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'"
+  },
+  {
+   "fieldname": "nombrebautizadosuple",
+   "fieldtype": "Data",
+   "label": "Nombre del bautizado",
+   "mandatory_depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'",
+   "read_only": 1
+  },
+  {
+   "fieldname": "personas_que_juran_y_dan_datos_section",
+   "fieldtype": "Section Break",
+   "label": "Personas que juran y dan datos"
+  },
+  {
+   "fieldname": "column_break_zucj",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "nombremadrebautizosuple",
+   "fieldtype": "Data",
+   "label": "Nombre completo de la madre"
+  },
+  {
+   "fieldname": "nombrepadrebautizosuple",
+   "fieldtype": "Data",
+   "label": "Nombre completo del padre"
+  },
+  {
+   "fieldname": "nombremadrinabautizosuple",
+   "fieldtype": "Data",
+   "label": "Nombre completo de la madrina"
+  },
+  {
+   "fieldname": "nombrepadrinobautizosuple",
+   "fieldtype": "Data",
+   "label": "Nombre completo del padrino"
+  },
+  {
+   "fieldname": "datos_de_la_partida_de_nacimiento_section",
+   "fieldtype": "Section Break",
+   "label": "Datos de la partida de nacimiento"
+  },
+  {
+   "fieldname": "fechanacimientobautizosuple",
+   "fieldtype": "Date",
+   "label": "Fecha de nacimiento",
+   "mandatory_depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'"
+  },
+  {
+   "fieldname": "lugarnacimientobautizosuple",
+   "fieldtype": "Data",
+   "label": "Lugar de nacimiento"
+  },
+  {
+   "fieldname": "column_break_gdmh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "distritopartidabautizosuple",
+   "fieldtype": "Link",
+   "label": "Distrito de emisi\u00f3n de partida",
+   "options": "PCR-MH-DISTRITOS"
+  },
+  {
+   "fetch_from": "distritopartidabautizosuple.nombre",
+   "fieldname": "nombredistritobautizosuple",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "nombredistrito"
+  },
+  {
+   "fetch_from": "distritopartidabautizosuple.nombremunicipio",
+   "fieldname": "municipiobautizosuple",
+   "fieldtype": "Data",
+   "label": "Municipio",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "distritopartidabautizosuple.nombredepartamento",
+   "fieldname": "departamentobautizosuple",
+   "fieldtype": "Data",
+   "label": "Departamento",
+   "read_only": 1
+  },
+  {
+   "fieldname": "table_personasjuran",
+   "fieldtype": "Table",
+   "mandatory_depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'",
+   "options": "PCR-ACT-SUPLETORIABAUTIZOPERSONAS"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-25 09:22:31.215634",
+ "modified": "2025-01-25 20:44:26.320018",
  "modified_by": "Administrator",
  "module": "CristoReyApp",
  "name": "PCR-ACT-MAESTROACTAS",

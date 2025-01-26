@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-01-25 18:45:51.023856",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nombrepersona",
+  "tipodocumento",
+  "numerodocumento",
+  "distritoemisioncodigo",
+  "nombredistrito",
+  "nombremunicipio",
+  "nombredepartamento"
+ ],
+ "fields": [
+  {
+   "fieldname": "nombrepersona",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nombre de persona"
+  },
+  {
+   "fieldname": "tipodocumento",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tipo documento",
+   "options": "Dui\nCarn\u00e9 residente\nPasaporte"
+  },
+  {
+   "fieldname": "numerodocumento",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Numero de documento"
+  },
+  {
+   "fieldname": "distritoemisioncodigo",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Distrito de emision de documento",
+   "options": "PCR-MH-DISTRITOS"
+  },
+  {
+   "fetch_from": "distrito_de_emision_de_documento.nombre",
+   "fieldname": "nombredistrito",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "nombre distrito"
+  },
+  {
+   "fetch_from": "distrito_de_emision_de_documento.nombremunicipio",
+   "fieldname": "nombremunicipio",
+   "fieldtype": "Data",
+   "label": "Municipio"
+  },
+  {
+   "fetch_from": "distrito_de_emision_de_documento.nombredepartamento",
+   "fieldname": "nombredepartamento",
+   "fieldtype": "Data",
+   "label": "Departamento"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2025-01-25 20:48:04.461681",
+ "modified_by": "Administrator",
+ "module": "CristoReyApp",
+ "name": "PCR-ACT-SUPLETORIABAUTIZOPERSONAS",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}
