@@ -259,9 +259,15 @@ fixtures = [
         ]
     },
     {
-        "dt": "Workspace",
+        "dt": "Role",
         "filters": [
             ["name", "like", "PCR-%"]
         ]
-    }
+    },
+    {
+        "dt": "Custom DocPerm",
+        "filters": [
+            ["name", "like", "PCR-%"]
+        ]
+    },
 ]

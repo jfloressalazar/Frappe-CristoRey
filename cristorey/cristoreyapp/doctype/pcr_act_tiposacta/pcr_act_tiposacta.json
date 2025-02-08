@@ -7,7 +7,8 @@
  "engine": "InnoDB",
  "field_order": [
   "nombretipoacta",
-  "nombrecorrelativoacta"
+  "nombrecorrelativoacta",
+  "formatoimpresion"
  ],
  "fields": [
   {
@@ -30,11 +31,17 @@
    "in_standard_filter": 1,
    "label": "Nombre para correlativo de acta",
    "reqd": 1
+  },
+  {
+   "fieldname": "formatoimpresion",
+   "fieldtype": "Link",
+   "label": "Formato de impresi\u00f3n",
+   "options": "Print Format"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-12-26 21:02:47.641047",
+ "modified": "2025-02-07 21:20:09.196595",
  "modified_by": "Administrator",
  "module": "CristoReyApp",
  "name": "PCR-ACT-TIPOSACTA",

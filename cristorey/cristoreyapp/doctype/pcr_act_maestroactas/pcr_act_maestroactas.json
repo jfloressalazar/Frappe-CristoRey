@@ -13,6 +13,7 @@
   "nombretitular",
   "column_break_zblc",
   "libroacta",
+  "formatoimpresion",
   "nfolio",
   "nasiento",
   "datosbautismo_tab",
@@ -522,11 +523,18 @@
    "fieldtype": "Table",
    "mandatory_depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'",
    "options": "PCR-ACT-SUPLETORIABAUTIZOPERSONAS"
+  },
+  {
+   "fetch_from": "tipoacta.formatoimpresion",
+   "fieldname": "formatoimpresion",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "formatoimpresion"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-01-25 20:44:26.320018",
+ "modified": "2025-02-07 21:34:33.287758",
  "modified_by": "Administrator",
  "module": "CristoReyApp",
  "name": "PCR-ACT-MAESTROACTAS",
