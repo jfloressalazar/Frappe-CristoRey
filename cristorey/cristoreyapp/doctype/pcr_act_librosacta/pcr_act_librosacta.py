@@ -1,0 +1,9 @@
+# Copyright (c) 2024, Jesus Alberto Flores Salazar and contributors
+# For license information, please see license.txt
+
+# import frappe
+from frappe.model.document import Document
+
+
+class PCRACTLIBROSACTA(Document):
+	pass

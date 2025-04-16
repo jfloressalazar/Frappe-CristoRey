@@ -245,3 +245,29 @@ app_license = "mit"
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
 
+fixtures = [
+    {
+        "dt": "DocType",
+        "filters": [
+            ["name", "like", "PCR-%"]
+        ]
+    },
+    {
+        "dt": "Print Format",
+        "filters": [
+            ["name", "like", "PCR-%"]
+        ]
+    },
+    {
+        "dt": "Role",
+        "filters": [
+            ["name", "like", "PCR-%"]
+        ]
+    },
+    {
+        "dt": "Custom DocPerm",
+        "filters": [
+            ["role", "like", "PCR-%"]
+        ]
+    },
+]

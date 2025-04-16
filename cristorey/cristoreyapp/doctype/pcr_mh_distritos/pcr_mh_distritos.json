@@ -1,0 +1,92 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2024-12-26 09:46:56.192125",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "codigo",
+  "nombre",
+  "municipio",
+  "nombremunicipio",
+  "departamento",
+  "nombredepartamento"
+ ],
+ "fields": [
+  {
+   "fieldname": "nombre",
+   "fieldtype": "Data",
+   "label": "Nombre"
+  },
+  {
+   "fieldname": "codigo",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "C\u00f3digo",
+   "reqd": 1
+  },
+  {
+   "fieldname": "municipio",
+   "fieldtype": "Link",
+   "label": "Municipio",
+   "options": "PCR-MH-MUNICIPIOS",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "municipio.nombre",
+   "fieldname": "nombremunicipio",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Nombre municipio"
+  },
+  {
+   "fieldname": "departamento",
+   "fieldtype": "Link",
+   "label": "Departamento",
+   "options": "PCR-MH-DEPARTAMENTOS",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "departamento.nombre",
+   "fieldname": "nombredepartamento",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Nombre departamento"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "id",
+   "options": "DIS-.YYYY.-.#####"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-01-25 18:56:06.473969",
+ "modified_by": "Administrator",
+ "module": "CristoReyApp",
+ "name": "PCR-MH-DISTRITOS",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "nombre"
+}
