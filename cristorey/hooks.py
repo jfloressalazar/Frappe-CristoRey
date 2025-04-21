@@ -270,4 +270,10 @@ fixtures = [
             ["role", "like", "PCR-%"]
         ]
     },
+        {
+        "dt": "Translation",    
+    },
+    {
+        "dt": "Property Setter",    
+    },
 ]

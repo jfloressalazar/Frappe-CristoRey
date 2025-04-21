@@ -224,7 +224,7 @@ def importar_datosparroquia():
     print("Iniciando inserción de Datos parroquia...")
     
     tipos_documento = [
-        {"nombre": "PARROQUIA \"CRISTO REY\" EL PARAÍSO", "direccion": "Bo. El Centro frente a parque centrl, El Paraíso, Chalatenango.", "telefono": "+503 2356 0563", "correo": "cristorey0@gmail.com"},
+        {"nombre": "PARROQUIA \"CRISTO REY\" EL PARAÍSO", "direccion": "Bo. El Centro, El Paraíso, Chalatenango, El Salvador.", "telefono": "+503 2356 0563", "correo": "cristorey0@gmail.com"},
     ]
 
     for idx, tipo in enumerate(tipos_documento, start=1):
