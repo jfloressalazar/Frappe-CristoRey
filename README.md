@@ -21,7 +21,7 @@ Incorporar la nueva aplicación al sitio
     bench --site frontend set-config developer_mode 1
     bench --site frontend enable-scheduler
 Clonar aplicación desde el repositorio de GitHub en la carpeta correcta y migración de fixtures para actualización de base de datos
-    cd apps/cristorey &&  rm -rf .[^.]* * &&  git clone --branch main https://jfloressalazar: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@github.com/jfloressalazar/Frappe-CristoRey.git . &&  cd ../..
+    cd apps/cristorey &&  rm -rf .[^.]* * &&  git clone --branch main https://jfloressalazar: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@github.com/jfloressalazar/Frappe-CristoRey.git . &&  cd ../..
     bench --site frontend migrate
 Activar Scripts de servidor en el sitio
     bench set-config -g server_script_enabled 1
@@ -31,7 +31,7 @@ Asegurar que el archivo sites/apps.txt  no esté presente la linea "cristorey" p
 Ejecutar y completar información
     bench new-app cristorey
 Ejecutar para clonar fuentes desde el repositorio
-    cd apps/cristorey &&  rm -rf .[^.]* * &&  git clone --branch main https://jfloressalazar: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@github.com/jfloressalazar/Frappe-CristoRey.git . &&  cd ../..
+    cd apps/cristorey &&  rm -rf .[^.]* * &&  git clone --branch main https://jfloressalazar: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@github.com/jfloressalazar/Frappe-CristoRey.git . &&  cd ../..
 Asegurar que el archivo sites/apps.txt  no esté presente la linea "erpnext" pero si "cristorey"
 Reiniciar conenedores para poner en linea la aplicación
     cristorey-production-frontend-1 cristorey-production-backend-1 cristorey-production-scheduler-1  cristorey-production-queue-long-1 cristorey-production-queue-short-1
