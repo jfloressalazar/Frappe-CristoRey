@@ -9,7 +9,7 @@ def run():
     importar_departamentos()
     importar_municipios()
     importar_distritos()
-
+    importar_datosparroquia()
 
 def importar_paises():
     """
@@ -224,7 +224,11 @@ def importar_datosparroquia():
     print("Iniciando inserción de Datos parroquia...")
     
     tipos_documento = [
-        {"nombre": "PARROQUIA \"CRISTO REY\" EL PARAÍSO", "direccion": "Bo. El Centro, El Paraíso, Chalatenango, El Salvador.", "telefono": "+503 2356 0563", "correo": "cristorey0@gmail.com"},
+        {"nombre": "PARROQUIA \"CRISTO REY\" EL PARAÍSO",
+         "direccion": "Bo. El Centro, El Paraíso, Chalatenango, El Salvador.",
+          "telefono": "+503 2356 0563", 
+          "diocesis": "Diocesis de Chalatenango",
+          "correo": "cristorey0@gmail.com"},
     ]
 
     for idx, tipo in enumerate(tipos_documento, start=1):
@@ -233,15 +237,17 @@ def importar_datosparroquia():
             direccion = tipo["direccion"]           
             telefono = tipo["telefono"]           
             correo = tipo["correo"]           
+            diocesis = tipo["diocesis"]           
             # Verificar si el tipo de documento ya existe
-            if not frappe.db.exists("PCR-CONF-DATOSPARROQUIA", {"nombre": nombre}):
+            if not frappe.db.exists("PCR-CONF-DATOSPARROQUIA", {"nombreparroquia": nombre}):
                 # Crear el nuevo registro
                 frappe.get_doc({
                     "doctype": "PCR-CONF-DATOSPARROQUIA",
-                    "nombre": nombre,
-                    "direccion": direccion,
-                    "telefono": telefono,
-                    "correo": correo,
+                    "nombreparroquia": nombre,
+                    "diosesis" : diocesis,
+                    "direccionparroquia": direccion,
+                    "telefonoparroquia": telefono,
+                    "correoparroquia": correo,
                 }).insert(ignore_permissions=True)
                 print(f"[Registro {idx}] Insertado: Nombre {nombre}")
             else:
