@@ -2,7 +2,7 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "format:ACTA-{nombrecodigotipoacta}-{YYYY}-{########}",
- "creation": "2024-12-22 21:45:06.735402",
+ "creation": "2025-05-21 20:57:56.238018",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
@@ -154,6 +154,7 @@
   {
    "fieldname": "datossupletoriaconfirmacion_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Datos de supletoria de confirmaci\u00f3n"
   },
   {
@@ -534,7 +535,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-07 21:34:33.287758",
+ "modified": "2025-05-21 10:44:32.262988",
  "modified_by": "Administrator",
  "module": "CristoReyApp",
  "name": "PCR-ACT-MAESTROACTAS",
