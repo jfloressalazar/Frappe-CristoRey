@@ -22,6 +22,7 @@
   "column_break_lmwz",
   "nombresacerdotebautizo",
   "datos_del_bautizado_padres_y_padrinos_section",
+  "genero_bautizado",
   "nombrebautizado",
   "nombremadre",
   "nombrepadre",
@@ -36,6 +37,7 @@
   "datosprimeracomunion_tab",
   "datos_de_la_primera_comuni\u00f3n_section",
   "fechaprimecomu",
+  "genero_primera_comunion",
   "nombrebenificiadoprimcomu",
   "nombrecompletomadreprimcomu",
   "nombrecompletopadreprimcomu",
@@ -44,6 +46,7 @@
   "datosconfirmacion_tab",
   "datos_de_la_confirmaci\u00f3n_section",
   "fechaconfirmacion",
+  "genero_de_confirmado",
   "nombrecompletoconfirmado",
   "nombrecompletomadreconfirma",
   "nombrecompletopadreconfirma",
@@ -68,6 +71,7 @@
   "personas_que_juran_y_dan_datos_section",
   "table_personasjuran",
   "datos_del_bautizado_y_padres_section",
+  "genero_bautizado_suple",
   "nombrebautizadosuple",
   "nombremadrebautizosuple",
   "nombrepadrebautizosuple",
@@ -531,11 +535,39 @@
    "fieldtype": "Data",
    "hidden": 1,
    "label": "formatoimpresion"
+  },
+  {
+   "fieldname": "genero_bautizado",
+   "fieldtype": "Select",
+   "label": "G\u00e9nero del bautizado",
+   "mandatory_depends_on": "eval:doc.tipoacta=='FE DE BAUTISMO'",
+   "options": "Masculino\nFemenino"
+  },
+  {
+   "fieldname": "genero_primera_comunion",
+   "fieldtype": "Select",
+   "label": "G\u00e9nero del beneficiado",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONSTANCIA DE PRIMERA COMUNI\u00d3N'",
+   "options": "Masculino\nFemenino"
+  },
+  {
+   "fieldname": "genero_de_confirmado",
+   "fieldtype": "Select",
+   "label": "G\u00e9nero del confirmado",
+   "mandatory_depends_on": "eval:doc.tipoacta=='CONFIRMACI\u00d3N'",
+   "options": "Masculino\nFemenino"
+  },
+  {
+   "fieldname": "genero_bautizado_suple",
+   "fieldtype": "Select",
+   "label": "Genero del bautizado",
+   "mandatory_depends_on": "eval:doc.tipoacta=='SUPLETORIA DE BAUTISMO'",
+   "options": "Masculino\nFemenino"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-05-21 10:44:32.262988",
+ "modified": "2025-07-10 22:28:15.195791",
  "modified_by": "Administrator",
  "module": "CristoReyApp",
  "name": "PCR-ACT-MAESTROACTAS",
